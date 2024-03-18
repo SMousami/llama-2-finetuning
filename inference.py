@@ -50,7 +50,7 @@ merged_model = PeftModel.from_pretrained(model,model_dir,device_map={"": 0})
 
 # Load the dataset
 
-df = pd.read_csv('/content/drive/MyDrive/drugsComTest_raw.csv')
+df = pd.read_csv('Read location')
 df = df.head(100)
 df['text'] = 'na'
 
@@ -101,7 +101,7 @@ for i in range(len(df)):
 llm = ChatOpenAI(
     model_name="gpt-4-turbo-preview",
     openai_api_base="https://withmartian.com/api/openai/v1",
-    openai_api_key="sk-1aa26cdf69a348b6a25760006c80fe52"
+    openai_api_key="insert api-key"
 )
 
 df['acc'] = 0
@@ -121,4 +121,4 @@ for i in range(len(df)):
 
 # save the result
 
-df.to_csv('/content/drive/MyDrive/Drug_result_100sample.csv')
+df.to_csv('Save location')
